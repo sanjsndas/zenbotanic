@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - ZenBotanic Gardening</title>
+  <meta name="description" content="Contact ZenBotanic Gardening for inquiries, consultations, or support. Learn ways to connect, reach out, and receive expert gardening assistance." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #204c24 0%, #2a6e33 100%);
+      color: #e0e8d8;
+      line-height: 1.8;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      padding-bottom: 80px;
+    }
+    a { text-decoration: none; color: #a8d0a0; transition: color 0.3s ease; }
+    a:hover, a:focus { color: #f0fff0; outline: none; }
+    /* Container */
+    .container {
+      max-width: 900px;
+      padding: 0 24px;
+      margin: 0 auto;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(20, 50, 19, 0.95);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #a8d0a0;
+      letter-spacing: 1.6px;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover,
+    nav a.active {
+      background: #5a9d50;
+      color: #f0fff0;
+      box-shadow: 0 4px 10px rgba(90,157,80,0.6);
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    /* Hamburger for Mobile */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #a8d0a0;
+      font-size: 2.4rem;
+      user-select: none;
+    }
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: rgba(20,50,19,0.95);
+      width: 100%;
+      padding: 12px 24px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+    }
+    .nav-mobile a {
+      padding: 12px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 1px solid #3d6f28;
+    }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile.show {
+      display: flex;
+      animation: slideDown 0.4s ease forwards;
+    }
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-12px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    main {
+      padding: 72px 0;
+      color: #d3e6b3;
+    }
+    main h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #cde7b0;
+      border-bottom: 3px solid #91bb66;
+      max-width: fit-content;
+      padding-bottom: 8px;
+      text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.45);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    main h3 {
+      font-weight: 700;
+      font-size: 1.9rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: #a8d0a0;
+    }
+    main p, main li {
+      max-width: 850px;
+      margin: 16px auto;
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.95;
+      text-align: justify;
+    }
+    main ul {
+      max-width: 850px;
+      margin: 16px auto 48px;
+      padding-left: 1.25rem;
+      color: #d3e6b3;
+    }
+    main ul li {
+      margin-bottom: 12px;
+    }
+    main strong { color: #a8d0a0; }
+    footer {
+      background: #1b3012;
+      color: #b0c488;
+      padding: 40px 24px 60px;
+      text-align: center;
+      font-size: 1rem;
+      border-top: 3px solid #83bd72;
+      box-shadow: inset 0 10px 15px -10px #254217;
+      user-select: none;
+    }
+    footer p {
+      max-width: 700px;
+      margin: 12px auto;
+      line-height: 1.6;
+    }
+    .footer-address {
+      margin-top: 28px;
+      color: #9fba86;
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    form {
+      background: #2a5a13;
+      padding: 24px 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      max-width: 850px;
+      margin: 0 auto 48px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #b7d49c;
+      font-size: 1.1rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      resize: vertical;
+      background-color: #336622;
+      color: #e4f4c1;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.7);
+      transition: box-shadow 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: inset 0 2px 8px #9fbb64;
+      background-color: #3e7a2b;
+    }
+    button[type="submit"] {
+      background: linear-gradient(135deg, #83bd72, #1f441e);
+      color: #f0fff0;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 28px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(23,77,33,0.6);
+      transition: all 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+    button[type="submit"]:hover, button[type="submit"]:focus {
+      box-shadow: 0 10px 22px rgba(44, 134, 62, 0.9);
+      transform: scale(1.05);
+      outline: none;
+    }
+    @media (max-width: 639px) {
+      header {
+        justify-content: space-between;
+      }
+      nav {
+        display: none;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .nav-mobile a {
+        font-size: 1.3rem;
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZenBotanic</h1>
+    <nav aria-label="Primary navigation">
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+    </nav>
+    <button aria-label="Toggle menu" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-icons">menu</span>
+    </button>
+  </header>
+  <nav id="mobile-menu" class="nav-mobile" hidden>
+   <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+  </nav>
+
+  <main class="container">
+    <h2>Contact ZenBotanic Gardening</h2>
+
+    <p>We are delighted to assist you with your gardening needs, inquiries, consultations, and support. ZenBotanic Gardening values every customer and strives to provide timely, thorough, and personalized attention. Please explore the various ways to connect with us below.</p>
+
+    <h3>Our Contact Information</h3>
+
+    <ul>
+      <li><strong>Phone:</strong> +1 (877) 499-8900 — Reach out to our customer support and consultation team during business hours (Monday-Friday 9 AM - 6 PM EST).</li>
+      <li><strong>Email:</strong> <a href="mailto:contact@zenbotanic.com" style="color:#a8d0a0;">contact@zenbotanic.com</a> — For general inquiries, feedback, and service requests.</li>
+      <li><strong>Office Address:</strong> 1 Washington Mews, New York, NY 10003, USA</li>
+      <li><strong>Business Hours:</strong> Monday to Friday: 9:00 AM – 6:00 PM; Saturday: 10:00 AM – 4:00 PM; Sunday: Closed</li>
+    </ul>
+
+    <h3>How to Schedule a Gardening Consultation or Service</h3>
+
+    <p>Planning your garden refresh or maintenance is easy with ZenBotanic:</p>
+    <ul>
+      <li>Contact us via phone or email specifying your service interest.</li>
+      <li>Our team will guide you through available dates and explain service options and pricing.</li>
+      <li>We will schedule an initial consultation if desired, to understand your space and preferences.</li>
+      <li>Upon agreement, service scheduling will be confirmed and carried out by our expert gardening team.</li>
+    </ul>
+    <p>We recommend early scheduling during peak seasons (spring and fall) to secure preferred dates.</p>
+
+    <h3>Customer Support and Assistance</h3>
+
+    <p>At ZenBotanic, your satisfaction is our utmost priority. We provide:</p>
+    <ul>
+      <li>Expert advice on plant care, planting schedules, and garden management.</li>
+      <li>Rapid responses to service questions and follow-ups.</li>
+      <li>Guidance on sustainable and organic gardening techniques.</li>
+      <li>Post-service feedback mechanisms to ensure continuous quality improvement.</li>
+    </ul>
+
+    <h3>Common Questions and Support Topics</h3>
+
+    <p>Many customers ask about plant watering, soil management, pest control, seasonal maintenance, and environmental sustainability. We provide detailed answers and guidance to empower your green thumb.</p>
+
+    <h3>Our Commitment To You</h3>
+
+    <p>ZenBotanic Gardening is committed to:</p>
+    <ul>
+      <li>Delivering high-quality, eco-friendly, and customer-focused gardening services.</li>
+      <li>Communicating transparently and promptly.</li>
+      <li>Respecting your privacy and property.</li>
+      <li>Continuously enhancing our knowledge to serve you better.</li>
+    </ul>
+
+    <h3>Visit Our Workshops and Events</h3>
+
+    <p>We regularly host gardening workshops, eco-education events, and community plant exchanges at our New York location and online. Join us to deepen your gardening knowledge and connect with fellow enthusiasts.</p>
+
+    <h3>Stay Connected</h3>
+
+    <p>Subscribe to our newsletter or follow us on social media to receive:</p>
+    <ul>
+      <li>Latest gardening tips and articles.</li>
+      <li>Exclusive discounts and seasonal promotions.</li>
+      <li>Event calendars and invitations.</li>
+      <li>Inspirational garden transformations and customer stories.</li>
+    </ul>
+
+    <h3>Safety and Accessibility</h3>
+
+    <p>Your safety and accessibility are important. We strive to offer services and communication accessible to all and encourage reporting of any concerns or required accommodations.</p>
+
+    <h3>Business Ethics</h3>
+
+    <p>ZenBotanic conducts all business with integrity, respect, and responsibility. We maintain customer confidentiality and comply with all regulations to ensure trustworthiness.</p>
+
+    <h3>Contact Form</h3>
+    <form method="POST" action="#" novalidate aria-label="Contact form">
+      <label for="name">Full Name<span aria-hidden="true" style="color: #91bb66;"> *</span></label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+
+      <label for="email">Email Address<span aria-hidden="true" style="color: #91bb66;"> *</span></label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" placeholder="Optional" autocomplete="tel" />
+
+      <label for="subject">Subject<span aria-hidden="true" style="color: #91bb66;"> *</span></label>
+      <input type="text" id="subject" name="subject" placeholder="Subject of your message" required />
+
+      <label for="message">Your Message<span aria-hidden="true" style="color: #91bb66;"> *</span></label>
+      <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <h3>Additional Contact Topics</h3>
+
+    <h4>Technical Assistance</h4>
+    <p>If you experience any issues with our website, online portals, or digital tools, please reach out so we can assist you promptly. We aim to maintain reliable and accessible technology platforms.</p>
+
+    <h4>Feedback and Suggestions</h4>
+    <p>Your feedback helps us improve our services and user experience. Please share your thoughts, suggestions, or any concerns via phone, email, or using the form above. We take every message seriously.</p>
+
+    <h4>Partnership Inquiries</h4>
+    <p>If you represent an organization or business interested in collaborating with ZenBotanic Gardening—whether through events, educational programs, or joint offerings—please contact us to discuss potential partnerships.</p>
+
+    <h4>Media and Press</h4>
+    <p>Journalists and media professionals seeking interviews, company information, or media materials can contact our communications team at <a href="mailto:media@zenbotanic.com" style="color:#a8d0a0;">media@zenbotanic.com</a>.</p>
+
+    <h4>Career Opportunities</h4>
+    <p>We welcome talented individuals passionate about horticulture and environmental stewardship to join our team. Please send resumes and cover letters to <a href="mailto:careers@zenbotanic.com" style="color:#a8d0a0;">careers@zenbotanic.com</a>.</p>
+
+    <h4>Event Hosting and Bookings</h4>
+    <p>Interested in hosting gardening workshops or private events at our facilities? Contact us to learn about venue options, availability, and booking procedures.</p>
+
+  </main>
+
+  <footer>
+    <p>© 2024 ZenBotanic Gardening. All rights reserved.</p>
+    <p class="footer-address" tabindex="0"><span class="material-icons" aria-hidden="true" style="vertical-align:middle; color:#83bd72;">location_on</span> 1 Washington Mews, New York, NY 10003, USA</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.hidden = !mobileMenu.hidden;
+      mobileMenu.classList.toggle('show');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.hidden = true;
+        mobileMenu.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+</body>
+</html>
+

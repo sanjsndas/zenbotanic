@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZenBotanic Gardening Blog & Services</title>
+  <meta name="description" content="ZenBotanic Gardening blog and services website - tips, services, customer feedback, and more." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #204c24 0%, #2a6e33 100%);
+      color: #e0e8d8;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: #a8d0a0;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #f0fff0;
+      outline: none;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      display: block;
+      margin: 16px auto;
+      user-select: none;
+    }
+    /* Container */
+    .container {
+      max-width: 1200px;
+      padding: 0 24px;
+      margin: 0 auto;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(20, 50, 19, 0.95);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #a8d0a0;
+      letter-spacing: 1.6px;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover,
+    nav a.active {
+      background: #5a9d50;
+      color: #f0fff0;
+      box-shadow: 0 4px 10px rgba(90,157,80,0.6);
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    /* Hamburger for Mobile */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #a8d0a0;
+      font-size: 2.4rem;
+      user-select: none;
+    }
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: rgba(20,50,19,0.95);
+      width: 100%;
+      padding: 12px 24px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+    }
+    .nav-mobile a {
+      padding: 12px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 1px solid #3d6f28;
+    }
+    .nav-mobile a:last-child {
+      border-bottom: none;
+    }
+    .nav-mobile.show {
+      display: flex;
+      animation: slideDown 0.4s ease forwards;
+    }
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-12px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 24px 80px;
+      background: linear-gradient(150deg, #2a6e33 0%, #154214 90%);
+      color: #dbf2c7;
+    }
+    .hero h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 2px 6px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+      color: #c9e2a4;
+      font-weight: 500;
+      text-shadow: 1px 2px 10px rgba(0,0,0,0.3);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #83bd72, #1f441e);
+      padding: 16px 42px;
+      border: none;
+      border-radius: 28px;
+      color: #f0fff0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(23,77,33,0.6);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      box-shadow: 0 10px 22px rgba(44, 134, 62, 0.9);
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    /* Section Titles */
+    section {
+      padding: 72px 24px;
+      background: linear-gradient(145deg, #1b4017, #2b6e2b);
+      margin: 0 0 48px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+    }
+    section h3 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #cde7b0;
+      border-bottom: 3px solid #91bb66;
+      max-width: fit-content;
+      padding-bottom: 8px;
+      text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.45);
+    }
+    section p {
+      max-width: 950px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      color: #d3e6b3;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    /* Cards Grid for Services and Tips */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .card {
+      background: #326c21;
+      border-radius: 16px;
+      box-shadow: 0 10px 14px rgba(0,0,0,0.4);
+      padding: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover, .card:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.7);
+      outline: none;
+    }
+    .card h4 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #def7d1;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
+    }
+    .card p {
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: #c8dba6;
+      line-height: 1.6;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #91bb66;
+      margin-top: auto;
+      user-select: none;
+    }
+    .card img {
+      margin-top: 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      transition: filter 0.3s ease;
+    }
+    .card img:hover, .card img:focus {
+      filter: brightness(1.1) saturate(1.2);
+      outline: none;
+    }
+    /* Feedback Section Styles */
+    blockquote {
+      background: #24581f;
+      border-left: 6px solid #83bd72;
+      padding: 16px 24px;
+      margin: 12px 0;
+      font-style: italic;
+      color: #d3e6b3;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+    blockquote footer {
+      font-weight: 700;
+      margin-top: 8px;
+      color: #a4c789;
+    }
+    /* Footer */
+    footer {
+      background: #1b3012;
+      color: #b0c488;
+      padding: 40px 24px 60px;
+      text-align: center;
+      font-size: 1rem;
+      border-top: 3px solid #83bd72;
+      box-shadow: inset 0 10px 15px -10px #254217;
+    }
+    footer p {
+      max-width: 700px;
+      margin: 12px auto;
+      line-height: 1.6;
+    }
+    .footer-address {
+      margin-top: 28px;
+      color: #9fba86;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .customer-satisfaction {
+      margin-top: 32px;
+      background: rgba(45, 90, 25, 0.6);
+      padding: 16px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #e1f4c5;
+      box-shadow: 0 3px 12px rgba(45,90,25,0.8);
+    }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      section {
+        padding: 56px 20px;
+        margin-bottom: 36px;
+      }
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1.15rem;
+      }
+    }
+    @media (max-width: 639px) {
+      header {
+        justify-content: space-between;
+      }
+      nav {
+        display: none;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .nav-mobile a {
+        font-size: 1.3rem;
+        padding-left: 0;
+      }
+    }
+
+    /* Tips detailed content styling */
+    #tips-content strong {
+      font-weight: 700;
+      color: #a8d0a0;
+      font-size: 1.2rem;
+      display: block;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    /* FAQ Styling */
+    #faq-section {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #d3e6b3;
+    }
+    .faq-item {
+      background: #2b5c16;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      padding: 16px 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+    .faq-question {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1.25rem;
+      user-select: none;
+      color: #a8d0a0;
+    }
+    .faq-question:hover, .faq-question:focus {
+      color: #f0fff0;
+      outline: none;
+    }
+    .faq-icon {
+      font-size: 2rem;
+      transition: transform 0.3s ease;
+      user-select: none;
+      color: #91bb66;
+    }
+    .faq-answer {
+      margin-top: 12px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0 4px;
+    }
+    .faq-answer.expanded {
+      max-height: 500px; /* large value for expand */
+      padding: 12px 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZenBotanic</h1>
+    <nav aria-label="Primary navigation">
+   <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+    <button aria-label="Toggle menu" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-icons">menu</span>
+    </button>
+  </header>
+
+  <nav id="mobile-menu" class="nav-mobile" hidden>
+    <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+  </nav>
+
+  <main>
+    <section class="hero" role="banner" aria-label="ZenBotanic Gardening Introduction">
+      <div class="container">
+        <h2>Welcome to ZenBotanic Gardening</h2>
+        <p>Transform your outdoor spaces into serene botanical sanctuaries. Explore expert gardening advice, services, and inspiration to nurture your green thumb. Together, let's cultivate beauty, one plant at a time.</p>
+        <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Discover Our Services</button>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title" tabindex="-1" class="container">
+      <h3 id="about-title">About ZenBotanic</h3>
+      <p>At ZenBotanic, we blend the art of gardening with the science of botany to craft thriving green environments for homes and businesses alike. Founded by passionate horticulturists, our mission is to inspire mindful cultivation and bring harmony, sustainability, and vitality to every garden we touch.</p>
+      <p>Our century-old tradition combined with modern eco-friendly techniques ensures that your garden flourishes in every season. We believe that gardens are living expressions of serenity, renewal, and connection to nature.</p>
+      <img src="p1.png" alt="Tranquil Zen garden featuring bamboo and stone path with sunlight filtering through leaves" />
+      <p>Whether you're a beginner seeking basic plant care guidance or an enthusiast desiring elaborate landscape designs, ZenBotanic is your trusted partner in all things gardening.</p>
+      <p>Our dedicated team consists of expert horticulturists, landscape architects, and plant care specialists who share a passion for nurturing nature's gifts. We continuously research and apply sustainable, environmental-friendly gardening approaches, including water conservation techniques, organic pest control, and native plant selection to benefit local ecosystems.</p>
+      <p>ZenBotanic also believes deeply in education and community outreach. We regularly hold workshops and seminars to empower gardeners of all skill levels. From urban balcony planters to large estates, our solutions are personalized, innovative, and grounded in a respect for nature’s rhythms.</p>
+      <img src="p2.png" alt="Gardener planting flowers on a sunlit stone patio with pots of colorful plants nearby" />
+      <p>Join our community of nature lovers and gardening aficionados dedicated to nurturing life and cultivating beauty with patience and care. Let ZenBotanic transform your green spaces into vibrant, tranquil sanctuaries where you and nature flourish.</p>
+    </section>
+
+    <section id="services" aria-labelledby="services-title" tabindex="-1" class="container">
+      <h3 id="services-title">Our Services</h3>
+      <p>We offer a comprehensive range of gardening services tailored to meet your unique needs. Our team of experts is equipped with the knowledge and tools to bring your garden visions to life.</p>
+      <div class="grid" role="list">
+        <article class="card" role="listitem" tabindex="0" aria-label="Landscape Design Service">
+          <h4>Landscape Design</h4>
+          <p>Creating custom garden layouts that harmonize with your environment and preferences. We plan flower beds, pathways, water features, and shade areas to maximize beauty and function.</p>
+          <p class="price">Starting at $1,500</p>
+          <img src="s1.png" alt="Landscape design blueprint featuring garden pathways and planting zones" loading="lazy" />
+        </article>
+        <article class="card" role="listitem" tabindex="0" aria-label="Garden Maintenance Service">
+          <h4>Garden Maintenance</h4>
+          <p>Regular upkeep including pruning, fertilizing, pest control, and seasonal plant care to keep your garden healthy and vibrant throughout the year.</p>
+          <p class="price">$100 per visit</p>
+          <img src="s2.png" alt="Garden maintenance team trimming shrubs and watering plants" loading="lazy" />
+        </article>
+        <article class="card" role="listitem" tabindex="0" aria-label="Consultation and Garden Planning Service">
+          <h4>Consultation & Planning</h4>
+          <p>Personalized advice and planning sessions to help you choose plants that thrive in your climate and soil, tailored watering and care routines, and sustainable gardening techniques.</p>
+          <p class="price">$120 per hour</p>
+          <img src="s3.png" alt="Gardening consultant advising homeowner while displaying plant samples" loading="lazy" />
+        </article>
+        <article class="card" role="listitem" tabindex="0" aria-label="Indoor Plant Care Service">
+          <h4>Indoor Plant Care</h4>
+          <p>Specialized services to nurture your indoor greenery using modern techniques that maintain air quality and aesthetic appeal in your living or working spaces.</p>
+          <p class="price">Starting at $300</p>
+          <img src="s4.png" alt="Indoor plants thriving in bright sunlight near window in modern living room" loading="lazy" />
+        </article>
+      </div>
+    </section>
+
+    <section id="tips" aria-labelledby="tips-title" tabindex="-1" class="container">
+      <h3 id="tips-title">Gardening Tips & Tricks</h3>
+      <p>Expert insights and practical advice to help your garden flourish no matter your skill level.</p>
+      <div id="tips-content">
+        <strong>Optimal Watering Techniques</strong>
+        <p>Proper watering is crucial to the health of your plants. Water deeply but less frequently to encourage strong root development. Early morning or late evening watering helps reduce evaporation and prevents leaf burn. Use soaker hoses or drip irrigation systems to deliver water directly to the soil and minimize waste.</p>
+
+        <strong>Soil Preparation & Fertilizing</strong>
+        <p>Healthy soil is the foundation of a thriving garden. Enrich your soil with organic compost to improve texture and nutrient content. Incorporate mulch to retain moisture and regulate temperature. Choose fertilizers tailored to your plants’ specific needs and avoid over-fertilizing, which can damage roots and cause excessive growth.</p>
+
+        <strong>Natural Pest Control</strong>
+        <p>Encourage beneficial insects like ladybugs and lacewings to naturally manage pest populations. Use companion planting to deter harmful insects and attract pollinators. Apply organic insecticidal soap or neem oil as safe treatments. Regularly inspect your plants for signs of pests or disease to catch problems early.</p>
+
+        <strong>Seasonal Planting Calendar</strong>
+        <p>Plan your planting around your local climate. Spring and fall are ideal for most vegetables and many flowers. Summer is perfect for heat-loving plants like tomatoes and peppers. Adjust planting schedules to your region’s frost dates and take advantage of seasonal sales for best value. Extend the growing season using cold frames or greenhouses where possible.</p>
+
+        <p>Continually expand your gardening knowledge with our regularly updated blogs and videos, designed to empower gardeners of all levels. Remember, every garden is unique—observe your plants closely, experiment with techniques, and enjoy the journey of nurturing living things.</p>
+      </div>
+    </section>
+
+    <section id="faq-section" aria-labelledby="faq-title" tabindex="-1" class="container">
+      <h3 id="faq-title">Frequently Asked Questions (FAQ)</h3>
+
+      <div id="faq-section">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer" id="faq1">
+            What types of gardens can ZenBotanic design?
+            <span class="material-icons faq-icon" aria-hidden="true">add</span>
+          </button>
+          <div class="faq-answer" id="faq1-answer" role="region" aria-labelledby="faq1" hidden>
+            <p>ZenBotanic specializes in a wide variety of garden types including residential gardens, urban balconies, rooftop gardens, commercial landscapes, Zen gardens, and sustainable native plant gardens. We design according to your space, preferences, and regional climate to ensure beauty and sustainability.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer" id="faq2">
+            How often should I water my garden?
+            <span class="material-icons faq-icon" aria-hidden="true">add</span>
+          </button>
+          <div class="faq-answer" id="faq2-answer" role="region" aria-labelledby="faq2" hidden>
+            <p>Frequency depends on plant species, soil type, and climate. Generally, watering deeply 1-2 times per week is better than shallow frequent watering. Early morning watering reduces evaporation. Drought-tolerant plants may need less frequent watering.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer" id="faq3">
+            Do you provide eco-friendly or organic garden maintenance?
+            <span class="material-icons faq-icon" aria-hidden="true">add</span>
+          </button>
+          <div class="faq-answer" id="faq3-answer" role="region" aria-labelledby="faq3" hidden>
+            <p>Yes, ZenBotanic prioritizes sustainable gardening practices including organic fertilizers, natural pest control, water conservation, and soil health. We tailor maintenance plans to minimize environmental impact while keeping your garden thriving.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer" id="faq4">
+            Can I get help with indoor plants?
+            <span class="material-icons faq-icon" aria-hidden="true">add</span>
+          </button>
+          <div class="faq-answer" id="faq4-answer" role="region" aria-labelledby="faq4" hidden>
+            <p>Absolutely. ZenBotanic offers specialized indoor plant care including plant selection, lighting advice, watering schedules, and pest management to enhance your indoor environment and improve air quality.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq5-answer" id="faq5">
+            How do I schedule a consultation or service?
+            <span class="material-icons faq-icon" aria-hidden="true">add</span>
+          </button>
+          <div class="faq-answer" id="faq5-answer" role="region" aria-labelledby="faq5" hidden>
+            <p>You can contact us via email at contact@zenbotanic.com or phone at +1 (877) 499-8900 to schedule a consultation or service. We also provide an online form for requests on our website (coming soon!).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq6-answer" id="faq6">
+            Do you offer seasonal promotions or discounts?
+            <span class="material-icons faq-icon" aria-hidden="true">add</span>
+          </button>
+          <div class="faq-answer" id="faq6-answer" role="region" aria-labelledby="faq6" hidden>
+            <p>Yes, we offer seasonal promotions around spring planting and fall preparation seasons. Subscribe to our newsletter or follow our social media for announcements and exclusive offers.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="feedback" aria-labelledby="feedback-title" tabindex="-1" class="container">
+      <h3 id="feedback-title">Customer Feedback</h3>
+      <p>Nothing brings us more joy than happy gardeners! Here are some reflections from our cherished clients:</p>
+      <blockquote tabindex="0">
+        "ZenBotanic changed my understanding of gardening. Their personalized care and attention made my small backyard a lush paradise." 
+        <footer>- Alexander P.</footer>
+      </blockquote>
+      <blockquote tabindex="0">
+        "The maintenance team is punctual, knowledgeable, and friendly. I see my garden thriving through each season with their expert touch." 
+        <footer>- Simone M.</footer>
+      </blockquote>
+      <blockquote tabindex="0">
+        "Excellent consultation services! I now have a vibrant indoor garden that freshens up my apartment and lifts my mood every day." 
+        <footer>- Leila K.</footer>
+      </blockquote>
+      <img src="p3.png" alt="Group of happy gardeners enjoying their lush garden outdoors with smiles and greenery" loading="lazy" />
+    </section>
+
+    <section id="disclaimer" class="container" tabindex="-1" aria-label="Disclaimer">
+      <h3>Disclaimer</h3>
+      <p>All information presented on ZenBotanic Gardening is based on our expertise and years of experience. However, gardening can vary widely due to local climate, soil, and environmental conditions. We recommend consulting with local experts for specific issues and exercising caution in applying any advice regarding fertilizers, pesticides, or plant care.</p>
+      <p>ZenBotanic Gardening is not responsible for any direct or indirect damages caused by the application of information shared on this site.</p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title" tabindex="-1" class="container">
+      <h3 id="contact-title">Contact & Address</h3>
+      <p>We welcome your inquiries, consultations, and feedback. Connect with us and let’s make your garden dream a reality!</p>
+      <p><span class="material-icons" aria-hidden="true" style="vertical-align:middle; color:#83bd72;">location_on</span>  
+      1 Washington Mews, New York, NY 10003, USA</p>
+      <p><span class="material-icons" aria-hidden="true" style="vertical-align:middle; color:#83bd72;">email</span> contact@zenbotanic.com</p>
+      <p><span class="material-icons" aria-hidden="true" style="vertical-align:middle; color:#83bd72;">phone</span> +1 (877) 499-8900</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 ZenBotanic Gardening. All rights reserved.</p>
+    <p class="customer-satisfaction" tabindex="0">Customer Satisfaction is our top priority. We continuously strive to improve our services and ensure you enjoy a flourishing and peaceful gardening experience with ZenBotanic.</p>
+  </footer>
+  
+  <script>
+    // Toggle mobile nav menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.hidden = !mobileMenu.hidden;
+      mobileMenu.classList.toggle('show');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.hidden = true;
+        mobileMenu.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // FAQ toggle behavior
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = btn.querySelector('.faq-icon');
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        if (!expanded) {
+          answer.hidden = false;
+          answer.classList.add('expanded');
+          icon.textContent = 'remove';
+        } else {
+          answer.classList.remove('expanded');
+          answer.addEventListener('transitionend', () => { answer.hidden = true; }, { once: true });
+          icon.textContent = 'add';
+        }
+      });
+
+      // keyboard accessibility: toggle on Enter or Space
+      btn.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms and Conditions - ZenBotanic Gardening</title>
+  <meta name="description" content="Terms and conditions for ZenBotanic Gardening website and services." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #204c24 0%, #2a6e33 100%);
+      color: #e0e8d8;
+      line-height: 1.8;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      padding-bottom: 80px;
+    }
+    a {
+      text-decoration: none;
+      color: #a8d0a0;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #f0fff0;
+      outline: none;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      padding: 0 24px;
+      margin: 0 auto;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(20, 50, 19, 0.95);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #a8d0a0;
+      letter-spacing: 1.6px;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover,
+    nav a.active {
+      background: #5a9d50;
+      color: #f0fff0;
+      box-shadow: 0 4px 10px rgba(90,157,80,0.6);
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    /* Hamburger for Mobile */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #a8d0a0;
+      font-size: 2.4rem;
+      user-select: none;
+    }
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: rgba(20,50,19,0.95);
+      width: 100%;
+      padding: 12px 24px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+    }
+    .nav-mobile a {
+      padding: 12px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 1px solid #3d6f28;
+    }
+    .nav-mobile a:last-child {
+      border-bottom: none;
+    }
+    .nav-mobile.show {
+      display: flex;
+      animation: slideDown 0.4s ease forwards;
+    }
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-12px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    /* Main Section Styles */
+    main {
+      padding: 72px 0;
+      color: #d3e6b3;
+    }
+    main h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #cde7b0;
+      border-bottom: 3px solid #91bb66;
+      max-width: fit-content;
+      padding-bottom: 8px;
+      text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.45);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    main h3 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-top: 48px;
+      margin-bottom: 12px;
+      color: #a8d0a0;
+    }
+    main p {
+      max-width: 850px;
+      margin: 16px auto;
+      font-size: 1.15rem;
+      line-height: 1.95;
+      font-weight: 500;
+      text-align: justify;
+    }
+    main ul {
+      max-width: 850px;
+      margin: 16px auto 32px;
+      padding-left: 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #d3e6b3;
+    }
+    main ul li {
+      margin-bottom: 12px;
+    }
+    main strong {
+      color: #a8d0a0;
+    }
+    /* Footer */
+    footer {
+      background: #1b3012;
+      color: #b0c488;
+      padding: 40px 24px 60px;
+      text-align: center;
+      font-size: 1rem;
+      border-top: 3px solid #83bd72;
+      box-shadow: inset 0 10px 15px -10px #254217;
+      position: relative;
+    }
+    footer p {
+      max-width: 700px;
+      margin: 12px auto;
+      line-height: 1.6;
+      user-select: none;
+    }
+    .footer-address {
+      margin-top: 28px;
+      color: #9fba86;
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    /* Responsive */
+    @media (max-width: 639px) {
+      header {
+        justify-content: space-between;
+      }
+      nav {
+        display: none;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .nav-mobile a {
+        font-size: 1.3rem;
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZenBotanic</h1>
+    <nav aria-label="Primary navigation">
+      <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0"aria-current="page">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+    <button aria-label="Toggle menu" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-icons">menu</span>
+    </button>
+  </header>
+
+  <nav id="mobile-menu" class="nav-mobile" hidden>
+   <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0"aria-current="page">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+  </nav>
+
+  <main class="container" role="main">
+    <h2>Terms & Conditions</h2>
+
+    <p><strong>Effective Date:</strong> June 2024</p>
+
+    <p>Welcome to ZenBotanic Gardening. By accessing or using our website and engaging our services, you agree to comply with and be bound by these Terms and Conditions (“Terms”). Please read these Terms carefully before using our services. If you do not agree to these Terms, you must not use our website or services.</p>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>These Terms govern your access to and use of ZenBotanic Gardening’s website and services, including but not limited to all content, functionality, features, and services we offer. By using our site, consulting with us, or acquiring any services, you signify your acceptance of these Terms.</p>
+    <p>Any additional terms provided in contracts or service agreements with ZenBotanic will supplement these Terms such that you are bound by both.</p>
+
+    <h3>2. Services Provided</h3>
+    <p>ZenBotanic Gardening offers a variety of gardening-related services designed to improve your outdoor and indoor environments. Our primary services include:</p>
+    <ul>
+      <li><strong>Landscape design:</strong> Custom planning of garden layouts, installation supervision, efficient water usage designs, and sustainable landscaping.</li>
+      <li><strong>Garden maintenance:</strong> Pruning, watering, fertilizing, pest control, seasonal cleanups, and general upkeep to keep your garden vibrant and healthy.</li>
+      <li><strong>Consultation and planning:</strong> Expert advice on plant selection, care techniques, soil and water management, and seasonal planning.</li>
+      <li><strong>Indoor plant care:</strong> Management of indoor plants for air quality, aesthetics, and overall wellbeing in living or work spaces.</li>
+    </ul>
+    <p>We commit to providing these with the highest professionalism using environmentally responsible methods.</p>
+
+    <h3>3. User Responsibilities and Conduct</h3>
+    <p>As a user of our website or services, you agree that you will:</p>
+    <ul>
+      <li>Provide truthful, accurate, and up-to-date information when required.</li>
+      <li>Use our services in compliance with all applicable laws, regulations, and ethical standards.</li>
+      <li>Not engage in any harmful or fraudulent activities in relation to our services.</li>
+      <li>Allow our personnel reasonable access to your property for service delivery as agreed.</li>
+      <li>Notify us promptly of any issues or concerns with services provided.</li>
+    </ul>
+    <p>Failure to comply may result in termination of service or legal action.</p>
+
+    <h3>4. Intellectual Property</h3>
+    <p>All materials, content, trademarks, logos, and proprietary information on this website are the property of ZenBotanic Gardening or its licensors. You may not copy, reproduce, distribute, modify, or create derivative works without explicit written permission.</p>
+    <p>This protection extends to all text, images, code, designs, and software related to our online presence and service portfolio.</p>
+
+    <h3>5. Privacy Policy</h3>
+    <p>Our <a href="privacy.html">Privacy Policy</a> complements these Terms by explaining how we collect, use, and protect your personal data. By using our website or submitting information to ZenBotanic, you consent to these practices.</p>
+
+    <h3>6. Limitation of Liability</h3>
+    <p>ZenBotanic Gardening makes every effort to deliver excellent services; however, due to nature’s variability, we do not guarantee specific outcomes or success in gardening results.</p>
+    <p>Under no circumstances shall ZenBotanic be liable for indirect, incidental, consequential, or punitive damages arising from use or inability to use our services, even if advised of such possibility.</p>
+    <p>Submission of claims must comply with statutory limitation periods.</p>
+
+    <h3>7. Changes and Discontinuation of Services</h3>
+    <p>We reserve the right to modify, suspend, or discontinue any service, website feature, or pricing at any time. Reasonable notice will be provided to users where applicable.</p>
+    <p>We endeavor to minimize disruption during such changes.</p>
+
+    <h3>8. Payments and Fees</h3>
+    <p>All fees for services provided by ZenBotanic are as specified in contracts or as published on our site. Payments must be made in full and on time as outlined in service agreements.</p>
+    <p>Late payments may incur additional charges or temporary suspension of services.</p>
+
+    <h3>9. Cancellation, Refunds, and Rescheduling</h3>
+    <p>Cancellations must be made a minimum of 24 hours prior to scheduled appointments to avoid cancellation fees. Refund policies vary depending on the type of service and contract and are outlined in individual agreements.</p>
+    <p>Rescheduling requests are subject to availability and should be made in advance.</p>
+
+    <h3>10. Governing Law and Jurisdiction</h3>
+    <p>These Terms are governed by the laws of the State of New York, USA. Any disputes shall be subject to the exclusive jurisdiction of courts located within New York City.</p>
+
+    <h3>11. Indemnification</h3>
+    <p>You agree to indemnify and hold harmless ZenBotanic Gardening, its affiliates, employees, and agents from any claims, liabilities, damages, losses, or expenses arising from your breach of these Terms or misuse of services.</p>
+
+    <h3>12. Third-Party Websites and Links</h3>
+    <p>Our website may contain links to third-party websites for your convenience. These sites are not controlled by ZenBotanic, and we assume no responsibility for their content, privacy policies, or practices.</p>
+
+    <h3>13. User Generated Content</h3>
+    <p>Any testimonials, feedback, photos, or content you submit to ZenBotanic become our property and may be used for marketing, promotional, or informational purposes with appropriate attribution.</p>
+
+    <h3>14. Newsletter and Email Communications</h3>
+    <p>By subscribing to our newsletter, you agree to receive informative and promotional emails from us. You may unsubscribe at any time using the link included in every email.</p>
+
+    <h3>15. Accessibility Commitment</h3>
+    <p>ZenBotanic is committed to providing accessible services and making our website usable by individuals with disabilities. We continuously work to meet recognized accessibility standards.</p>
+    <p>If you encounter any accessibility barriers, please contact us so we can assist.</p>
+
+    <h3>16. Modifications to Terms</h3>
+    <p>We reserve the right to update or revise these Terms at any time. Updates will be posted on this page with the date of revision. Continued use of our services after changes constitutes your acceptance of the updated Terms.</p>
+
+    <h3>17. Contact Information</h3>
+    <p>If you have questions regarding these Terms or any aspect of our services, please contact us at:</p>
+    <p><strong>Email:</strong> <a href="mailto:contact@zenbotanic.com" style="color:#a8d0a0;">contact@zenbotanic.com</a></p>
+    <p><strong>Phone:</strong> +1 (877) 499-8900</p>
+    <p><strong>Address:</strong> 1 Washington Mews, New York, NY 10003, USA</p>
+
+    <h3>18. Comprehensive Service Descriptions</h3>
+    <p>ZenBotanic Gardening provides a wide spectrum of services to meet the varied needs of gardening enthusiasts and professionals. Our landscape design includes thorough site assessments, soil testing, sunlight analysis, and water flow planning to develop sustainable, attractive, and functional garden layouts tailored to client wishes.</p>
+    <p>Our maintenance services range from seasonal pruning and fertilizing to pest and disease management. We employ eco-conscious products and techniques to promote organic garden health. Our consultation services provide personalized advice for plant selection, climate adaptation, and year-round garden care strategies. Indoor plant care offers tailored guidance for optimal plant placement, watering, and environmental enrichment to enhance interior spaces.</p>
+
+    <h3>19. Environmental and Safety Pledge</h3>
+    <p>We prioritize environmentally responsible gardening practices and ensure our team observes the highest safety standards. We use environmentally-friendly materials and techniques, comply with all safety regulations, and invest in staff training to maintain a safe experience for our clients and personnel.</p>
+
+    <h3>20. Customer Obligations & Cooperation</h3>
+    <p>Clients are expected to provide truthful information about their property, garden conditions, and preferences. Access must be made available for service personnel during agreed times. Clients should communicate promptly regarding any concerns or changes. Cooperation ensures we deliver optimal garden care and aesthetic results.</p>
+
+    <h3>21. Dispute Resolution Procedure</h3>
+    <p>ZenBotanic encourages amicable dispute resolution. Any disagreements should first be addressed through direct dialogue or mediation. If unresolved, parties may pursue arbitration or legal proceedings within New York jurisdiction.</p>
+
+    <h3>22. Entire Agreement</h3>
+    <p>These Terms, together with any service agreements or contracts, comprise the entire understanding between ZenBotanic and the client. They supersede any prior agreements or discussions, whether oral or written.</p>
+
+    <h3>23. Miscellaneous Terms</h3>
+    <p>If any provision of these Terms is deemed unenforceable, the remaining provisions remain fully effective. Waiver of any provision does not constitute a waiver of other terms. Headings are for convenience and do not affect interpretation.</p>
+
+    <p>Thank you for choosing ZenBotanic Gardening. We look forward to partnering with you in nurturing your green spaces responsibly and beautifully.</p>
+  </main>
+
+  <footer>
+    <p>© 2024 ZenBotanic Gardening. All rights reserved.</p>
+    <p class="footer-address" tabindex="0"><span class="material-icons" aria-hidden="true" style="vertical-align:middle; color:#83bd72;">location_on</span> 1 Washington Mews, New York, NY 10003, USA</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.hidden = !mobileMenu.hidden;
+      mobileMenu.classList.toggle('show');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.hidden = true;
+        mobileMenu.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+</body>
+</html>

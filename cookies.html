@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cookies Policy - ZenBotanic Gardening</title>
+  <meta name="description" content="Detailed Cookies Policy for ZenBotanic Gardening explaining cookie usage, management, and privacy." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #204c24 0%, #2a6e33 100%);
+      color: #e0e8d8;
+      line-height: 1.8;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      padding-bottom: 100px;
+      position: relative;
+    }
+    a {
+      text-decoration: none;
+      color: #a8d0a0;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #f0fff0;
+      outline: none;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      padding: 0 24px;
+      margin: 0 auto;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(20, 50, 19, 0.95);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #a8d0a0;
+      letter-spacing: 1.6px;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover,
+    nav a.active {
+      background: #5a9d50;
+      color: #f0fff0;
+      box-shadow: 0 4px 10px rgba(90,157,80,0.6);
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    /* Hamburger for Mobile */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #a8d0a0;
+      font-size: 2.4rem;
+      user-select: none;
+    }
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: rgba(20,50,19,0.95);
+      width: 100%;
+      padding: 12px 24px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+    }
+    .nav-mobile a {
+      padding: 12px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-bottom: 1px solid #3d6f28;
+    }
+    .nav-mobile a:last-child {
+      border-bottom: none;
+    }
+    .nav-mobile.show {
+      display: flex;
+      animation: slideDown 0.4s ease forwards;
+    }
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-12px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    main {
+      padding: 72px 0;
+      color: #d3e6b3;
+    }
+    main h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #cde7b0;
+      border-bottom: 3px solid #91bb66;
+      max-width: fit-content;
+      padding-bottom: 8px;
+      text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.45);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    main h3 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: #a8d0a0;
+    }
+    main p {
+      max-width: 850px;
+      margin: 16px auto;
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 2;
+      text-align: justify;
+    }
+    main ol {
+      max-width: 850px;
+      margin: 16px auto 48px;
+      padding-left: 1.25rem;
+      color: #d3e6b3;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    main ol li {
+      margin-bottom: 18px;
+    }
+    footer {
+      background: #1b3012;
+      color: #b0c488;
+      padding: 40px 24px 80px;
+      text-align: center;
+      font-size: 1rem;
+      border-top: 3px solid #83bd72;
+      box-shadow: inset 0 10px 15px -10px #254217;
+      user-select: none;
+      position: relative;
+      z-index: 1000;
+    }
+    footer p {
+      max-width: 700px;
+      margin: 12px auto;
+      line-height: 1.6;
+    }
+    .footer-address {
+      margin-top: 28px;
+      color: #9fba86;
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    /* Cookie consent dialog */
+    #cookie-consent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(20, 50, 19, 0.97);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.8);
+      padding: 20px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 1rem;
+      color: #d3e6b3;
+      z-index: 1100;
+    }
+    #cookie-consent p {
+      flex: 1 1 60%;
+      margin: 0;
+    }
+    #cookie-consent button {
+      flex: 0 0 auto;
+      margin-left: 12px;
+      padding: 10px 20px;
+      font-weight: 700;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      background: #83bd72;
+      color: #f0fff0;
+      transition: background-color 0.3s ease;
+    }
+    #cookie-consent button:hover,
+    #cookie-consent button:focus {
+      background: #a3d38a;
+      outline: none;
+    }
+    #cookie-consent button.decline {
+      background: #8b3a3a;
+    }
+    #cookie-consent button.decline:hover,
+    #cookie-consent button.decline:focus {
+      background: #a96464;
+    }
+    @media (max-width: 639px) {
+      #cookie-consent {
+        flex-direction: column;
+        text-align: center;
+      }
+      #cookie-consent p {
+        flex: 1 1 100%;
+        margin-bottom: 12px;
+      }
+      #cookie-consent button {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 639px) {
+      header {
+        justify-content: space-between;
+      }
+      nav {
+        display: none;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .nav-mobile a {
+        font-size: 1.3rem;
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZenBotanic</h1>
+    <nav aria-label="Primary navigation">
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0"aria-current="page">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+    <button aria-label="Toggle menu" class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-icons">menu</span>
+    </button>
+  </header>
+
+  <nav id="mobile-menu" class="nav-mobile" hidden>
+    <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0"aria-current="page">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+  </nav>
+
+  <main class="container" role="main">
+    <h2>Cookies Policy</h2>
+    <p>Welcome to ZenBotanic Gardening's Cookies Policy. This document details how we use cookies on our website to improve your experience, understand site usage, and provide personalized content and advertising. We are committed to transparency and respect for your privacy.</p>
+    <p>Our Cookies Policy explains what cookies are, how we use them, your options regarding cookies, and how you can manage and disable them. Please read the following comprehensive points carefully.</p>
+
+    <ol>
+      <li><strong>What Are Cookies?</strong><br />
+      Cookies are small text files stored on your device by your web browser at the request of websites you visit. They help websites remember your actions and preferences (such as login status, language, and display preferences) to improve your browsing experience.</li>
+
+      <li><strong>Types of Cookies We Use</strong><br />
+      Our website uses several types of cookies including:
+      <ul>
+        <li><em>Strictly necessary cookies</em> essential for site operation.</li>
+        <li><em>Performance and analytics cookies</em> to gather usage data to optimize site performance.</li>
+        <li><em>Functional cookies</em> to remember preferences and provide enhanced features.</li>
+        <li><em>Advertising and targeting cookies</em> to deliver relevant ads and track ad performance.</li>
+      </ul>
+      </li>
+
+      <li><strong>First-Party vs Third-Party Cookies</strong><br />
+      We use both first-party cookies directly set by ZenBotanic Gardening and third-party cookies set by trusted partners such as analytics and marketing providers. Third-party cookies help us understand user behavior and improve marketing effectiveness.</li>
+
+      <li><strong>How We Use Cookies</strong><br />
+      Cookies enable us to personalize your experience, remember your preferences, track site usage trends, measure campaign effectiveness, improve security, and comply with legal obligations.</li>
+
+      <li><strong>Necessary Cookies</strong><br />
+      These cookies allow basic website functionality like page navigation, secure login to customer accounts, and shopping cart management. Without these, some parts of our site may not function correctly.</li>
+
+      <li><strong>Analytics Cookies</strong><br />
+      These cookies collect anonymous information about how visitors use ZenBotanic Gardening, such as visited pages, time spent, and interaction behavior. This information helps us improve site usability and content.</li>
+
+      <li><strong>Functional Cookies</strong><br />
+      Functional cookies remember your preferences, such as language choices or font size. They help deliver a more personalized and consistent experience during subsequent visits.</li>
+
+      <li><strong>Advertising Cookies</strong><br />
+      Advertising cookies collect information to provide you with relevant advertisements related to gardening and enhance ad targeting efficiency. They help us assess campaign success and prevent showing you irrelevant ads repeatedly.</li>
+
+      <li><strong>Cookie Consent and Preferences</strong><br />
+      We display a cookie consent banner on your first visit to our site, allowing you to accept or decline non-essential cookies. You can update your preferences anytime through the banner settings or your browser.</li>
+
+      <li><strong>How to Manage Cookies</strong><br />
+      You can control and manage cookies through your browser settings. Most browsers allow you to block, delete, or restrict cookies, but disabling cookies may affect your experience on some features of our website.</li>
+
+      <li><strong>Data Retention</strong><br />
+      Cookie data retention periods vary by cookie type and provider. Some expire at end of session, others remain for months or years. We comply with legal retention guidelines and delete data when no longer needed.</li>
+
+      <li><strong>Your Privacy Rights</strong><br />
+      Apart from cookie management, you have rights under data privacy laws including access, correction, deletion of your personal data. Our Privacy Policy outlines these rights in detail.</li>
+
+      <li><strong>Children’s Use of Cookies</strong><br />
+      Our site is not directed at children under 13 years old, and we do not knowingly use cookies to collect information from minors in violation of laws.</li>
+
+      <li><strong>Changes to Cookie Policy</strong><br />
+      We may update our Cookies Policy from time to time to reflect changes in technology, regulations, or our practices. We encourage you to review this policy regularly.</li>
+
+      <li><strong>Cookie Policy Contact</strong><br />
+      For any questions or concerns regarding our cookie practices, please contact us at <a href="mailto:contact@zenbotanic.com" style="color:#a8d0a0;">contact@zenbotanic.com</a>.</li>
+
+      <li><strong>Strictly Necessary Cookies - Details</strong><br />
+      These cookies ensure secure access, prevent fraud, and enable core functions such as login sessions and shopping cart functionality. They are essential for security and cannot be disabled without impacting site usability.</li>
+
+      <li><strong>Google Analytics and Performance Tracking</strong><br />
+      We use Google Analytics to understand user interactions and improve our services. Google Analytics cookies collect data in a manner that does not identify individual users and comply with data protection regulations.</li>
+
+      <li><strong>Third-Party Advertising Partners</strong><br />
+      We collaborate with carefully selected advertising providers who may set cookies to serve personalized ads on our pages and other sites you visit, respecting your consent choices.</li>
+
+      <li><strong>Social Media Cookies</strong><br />
+      Cookies from social platforms such as Facebook, Twitter, and Instagram enable sharing and embedding of social content and help track campaign effectiveness when consented.</li>
+
+      <li><strong>Cookie Lifetime and Expiry</strong><br />
+      Cookies set by ZenBotanic Gardening range from session cookies which expire when you close your browser, to persistent cookies that remain for months or years to enhance your experience over repeated visits.</li>
+
+      <li><strong>How Cookies Help Improve Experience</strong><br />
+      By remembering login status, preferences, and past interactions, cookies enable faster and smoother browsing, personalized content delivery, and reduce repetitive tasks.</li>
+
+      <li><strong>Security and Safe Usage of Cookies</strong><br />
+      We use secure cookie flags and HTTPS to encrypt cookie data transmission. We do not store sensitive personal information in cookies, and access is strictly controlled.</li>
+
+      <li><strong>Opt-Out Options</strong><br />
+      You can opt out of targeted advertising by adjusting browser settings or visiting industry opt-out tools. Declining cookies may limit certain personalized features.</li>
+
+      <li><strong>Cookies on Mobile Devices</strong><br />
+      Our cookie practices apply equally across devices including smartphones and tablets. Browser controls on mobile platforms also allow cookie management.</li>
+
+      <li><strong>Cookie Categories Explained</strong><br />
+      We group cookies into mandatory, analytical, functional, and advertising for transparency. You can choose which categories to accept during your first visit.</li>
+
+      <li><strong>Consent Withdrawal</strong><br />
+      You may withdraw your consent to non-essential cookies at any time by changing your preferences in our cookie banner or browser settings.</li>
+
+      <li><strong>Impact of Disabling Cookies</strong><br />
+      Disabling certain cookies may affect your ability to use our website fully, including access to member-only areas or interactive features.</li>
+
+      <li><strong>Cookie Policy and Legal Compliance</strong><br />
+      Our cookie usage complies with GDPR, CCPA, and other applicable privacy laws to protect your rights and ensure transparency.</li>
+
+      <li><strong>Data Protection Officer Contact</strong><br />
+      You may contact our Data Protection Officer at <a href="mailto:dpo@zenbotanic.com" style="color:#a8d0a0;">dpo@zenbotanic.com</a> with privacy-related concerns.</li>
+
+      <li><strong>Cookies Used for Analytics Purpose</strong><br />
+      Analytics cookies collect anonymous information on visitor count, navigation paths, and device types to help us optimize our site performance and user experience.</li>
+
+      <li><strong>Cookies Used for Functional Purposes</strong><br />
+      Functional cookies enable us to store your preferences like language, text size, and default settings for smoother personalized interactions.</li>
+
+      <li><strong>Advertising and Tracking Cookies</strong><br />
+      These cookies track your activities across websites to present you with relevant advertisements based on your interests and browsing behavior.</li>
+
+      <li><strong>Cookie Management Tools</strong><br />
+      We recommend using browser cookie management tools, third-party add-ons, or privacy browser modes to control your cookie preferences effectively.</li>
+
+      <li><strong>How to Clear Cookies</strong><br />
+      Most browsers offer options to clear cookies and site data via settings or preferences menus. Clearing cookies may sign you out and reset site preferences.</li>
+
+      <li><strong>Tracking Prevention Features</strong><br />
+      Modern browsers include tracking prevention to restrict third-party cookies. We support these features respecting your privacy.</li>
+
+      <li><strong>Cookies and Your Personal Information</strong><br />
+      Cookies themselves do not collect personal data but may track identifiers linked to your online profiles; we ensure strict confidentiality and encryption of any associated data.</li>
+
+      <li><strong>Cookies and Children’s Privacy</strong><br />
+      We do not knowingly place cookies intended for children under 13. Our website is designed for general audiences with appropriate safeguards.</li>
+
+      <li><strong>Notification of Policy Changes</strong><br />
+      We will notify users of significant changes to our cookie policy via website banner or email where applicable.</li>
+
+      <li><strong>Cookie Categories You Can Control</strong><br />
+      Through our consent banner, you may choose which cookie categories to allow or block to tailor your browsing experience your way.</li>
+
+      <li><strong>Data Sharing with Third Parties</strong><br />
+      We may share cookie-related data with trusted partners but only in a manner consistent with your consent and in compliance with laws.</li>
+
+      <li><strong>Cookies and Social Features</strong><br />
+      Cookies enable social sharing features, allowing you to easily share ZenBotanic content on platforms like Facebook, LinkedIn, and Twitter.</li>
+
+      <li><strong>Cookie Storage Locations</strong><br />
+      Cookies are stored on your device as text files in browser directories. Our cookies have secure attributes to prevent unauthorized access.</li>
+
+      <li><strong>How We Protect Cookie Data</strong><br />
+      We use industry best practices including encryption, secure flags, and limited data access to protect cookie-related information.</li>
+
+      <li><strong>Benefits of Allowing Cookies</strong><br />
+      Enabling cookies results in enhanced site usability, personalized content, saved preferences, and a more seamless user experience across sessions.</li>
+
+      <li><strong>Your Choices Matter</strong><br />
+      We respect your cookie choices and provide easy ways to modify or withdraw consent to maintain control over your online privacy.</li>
+
+      <li><strong>Contact for Cookie Queries</strong><br />
+      For detailed questions or privacy concerns about cookies, please contact <a href="mailto:contact@zenbotanic.com" style="color:#a8d0a0;">contact@zenbotanic.com</a>.</li>
+    </ol>
+  </main>
+
+  <footer>
+    <p>© 2024 ZenBotanic Gardening. All rights reserved.</p>
+    <p class="footer-address" tabindex="0"><span class="material-icons" aria-hidden="true" style="vertical-align:middle; color:#83bd72;">location_on</span> 1 Washington Mews, New York, NY 10003, USA</p>
+    <p style="margin-top: 8px;">Phone: +1 (877) 499-8900</p>
+  </footer>
+
+  <div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookies consent">
+    <p>We use cookies to enhance your browsing experience, personalize content, and analyze site traffic. By clicking accept, you consent to our use of cookies.</p>
+    <button id="accept-cookies" type="button">Accept</button>
+    <button id="decline-cookies" type="button" class="decline">Decline</button>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.hidden = !mobileMenu.hidden;
+      mobileMenu.classList.toggle('show');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.hidden = true;
+        mobileMenu.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // Cookie Consent Dialog Handling
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    // Check if user already consented or declined
+    if(localStorage.getItem('zenbotanicCookiesAccepted') === 'true' || localStorage.getItem('zenbotanicCookiesDeclined') === 'true') {
+      cookieConsent.style.display = 'none';
+    }
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('zenbotanicCookiesAccepted', 'true');
+      cookieConsent.style.display = 'none';
+      // Additional code to enable cookies/actions can be added here
+    });
+
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem('zenbotanicCookiesDeclined', 'true');
+      cookieConsent.style.display = 'none';
+      // Additional code to disable cookies/actions can be added here
+    });
+  </script>
+</body>
+</html>
+
